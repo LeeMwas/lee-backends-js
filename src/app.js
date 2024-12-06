@@ -4,6 +4,7 @@ const helmet = require('helmet');
 
 const authRoutes = require('./routes/authRoutes');
 const userRoutes = require('./routes/userRoutes');
+const transactionRoutes = require('./routes/transactionRoutes');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 // Routes
 app.use('/api/auth', authRoutes);
 app.use('/api/user', userRoutes);
+app.use('/api/transactions', transactionRoutes);
 
 // Health Check Route
 app.get('/api/health', (req, res) => {
